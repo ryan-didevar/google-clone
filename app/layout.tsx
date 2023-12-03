@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import HomeHeader from "./HomeHeader";
 import HomeFooter from "./HomeFooter";
 import QueryClientProvider from "./QueryClientProvider";
 
@@ -21,7 +20,6 @@ export default function RootLayout({
     <html lang="en">
       <body suppressHydrationWarning={true} className={inter.className}>
         <QueryClientProvider>
-          <HomeHeader />
           {children}
           <HomeFooter />
         </QueryClientProvider>

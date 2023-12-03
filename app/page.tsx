@@ -1,9 +1,10 @@
 import Image from "next/image";
 import HomeSearch from "./HomeSearch";
-
+import HomeHeader from "./HomeHeader";
 const Home = () => {
   return (
     <>
+      <HomeHeader />
       <div className="flex flex-col items-center mt-24">
         <Image
           alt="Google Image"
