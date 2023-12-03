@@ -2,6 +2,7 @@
 const nextConfig = {
   env: {
     API_KEY: process.env.API_KEY,
+    LOOKUP_API_KEY: process.env.LOOKUP_API_KEY,
   },
   images: {
     remotePatterns: [
