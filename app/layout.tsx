@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import HomeFooter from "./HomeFooter";
 import QueryClientProvider from "./QueryClientProvider";
+import classNames from "classnames";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true} className={inter.className}>
+      <body
+        suppressHydrationWarning={true}
+        className={classNames(inter.className, {
+          "relative  min-h-screen": true,
+        })}
+      >
         <QueryClientProvider>
           {children}
           <HomeFooter />

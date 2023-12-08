@@ -7,10 +7,10 @@ const nextConfig = {
     GO_CONTEXT_KEY: process.env.GO_CONTEXT_KEY,
   },
   images: {
+    domains: ["*"],
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "upload.wikimedia.org",
+        hostname: "*",
       },
     ],
   },

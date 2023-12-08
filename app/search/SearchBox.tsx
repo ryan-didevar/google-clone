@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { FormEvent, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsFillMicFill } from "react-icons/bs";
@@ -8,12 +8,13 @@ import { RxCross2 } from "react-icons/rx";
 const SearchBox = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const pathname = usePathname();
   const searchTerm = searchParams.get("searchTerm");
   const [term, setTerm] = useState(searchTerm || "");
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!term.trim()) return null;
-    router.push(`/search/web?searchTerm=${term}`);
+    router.push(`${pathname}?searchTerm=${term}`);
   };
   return (
     <form
